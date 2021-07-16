@@ -1,0 +1,15 @@
+{
+  "name": "Text Box select shortcut",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "script.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {},
+  "commands": {
+    "_execute_action": {
+      "suggested_key": "Ctrl+Shift+Space"	
+    }
+  }
+}
