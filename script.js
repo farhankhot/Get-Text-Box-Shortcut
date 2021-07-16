@@ -1,3 +1,4 @@
+
 chrome.action.onClicked.addListener((tab) => {
   chrome.scripting.executeScript({
     target: {tabId: tab.id},
@@ -6,22 +7,25 @@ chrome.action.onClicked.addListener((tab) => {
 });
 
 
-function contentScriptFunc() {
 
+function contentScriptFunc() {
 	var textBoxes = [];
-  var x = document.getElementsByTagName("input");
-	
-	for (var i = 0; i < x.length; i++) {
-		// 1st->2nd->3rd
-		var y = document.getElementsByTagName("input").item(i);
-		textBoxes.push(y);
-	}
+  var inputTags = document.getElementsByTagName("input");
+  
+	for (var j = 0; j < inputTags.length; j++) {
+		if (inputTags[j].getAttribute("type") === "text") {
+			var y = inputTags.item(j);
+			textBoxes.push(y);
+		}
+	}	
 		
 	textBoxes[0].focus();
 		
 	// Remove from beginnig of array
-	var x = textBoxes.shift();
+	var z = textBoxes.shift();
 		
 	// Add this to the end
-	textBoxes.push(x); 
+	textBoxes.push(z);
+	
+   
 }
