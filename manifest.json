@@ -5,7 +5,7 @@
   "background": {
     "service_worker": "script.js"
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "storage"],
   "action": {},
   "commands": {
     "_execute_action": {
