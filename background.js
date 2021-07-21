@@ -27,10 +27,24 @@ function getFirstInQueue() {
 
 	// Template literals: https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation
 		
-		var recreatedHTMLElement = document.querySelector(`[name=${createdList[j]}]`);
+		var recreatedHTMLElementfromName = document.querySelector(`[name=${createdList[j]}]`);
+
+		var recreatedHTMLElementfromId = document.querySelector(`[id=${createdList[j]}]`);
+
+		if (recreatedHTMLElementfromName !== null) {
+			console.log("name fired");
+			finalList.push(recreatedHTMLElementfromName);
+			console.log(finalList[j]);
+		}
+
+		else if (recreatedHTMLElementfromId !== null) {
+			console.log("id fired");
+			finalList.push(recreatedHTMLElementfromId);
+			console.log(finalList[j]);
+		}
+
 		// console.log(recreatedHTMLElement);
-		finalList.push(recreatedHTMLElement);
-		console.log(finalList[j]);
+		
 	}
 
 	finalList[0].focus();
