@@ -32,13 +32,11 @@ function getFirstInQueue() {
 		var recreatedHTMLElementfromId = document.querySelector(`[id=${createdList[j]}]`);
 
 		if (recreatedHTMLElementfromName !== null) {
-			console.log("name fired");
 			finalList.push(recreatedHTMLElementfromName);
 			console.log(finalList[j]);
 		}
 
 		else if (recreatedHTMLElementfromId !== null) {
-			console.log("id fired");
 			finalList.push(recreatedHTMLElementfromId);
 			console.log(finalList[j]);
 		}

@@ -32,7 +32,7 @@ window.onload = function() {
 			}
 			else if (idAttrOfItem !== null) {
 				console.log(idAttrOfItem);
-				textBoxesArr.push(idAttrOfItem);
+				textBoxes.push(idAttrOfItem);
 			}
 			
 		}
