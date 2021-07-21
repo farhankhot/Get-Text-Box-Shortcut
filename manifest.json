@@ -1,5 +1,5 @@
 {
-  "name": "Text Box select shortcut",
+  "name": "Text Box Shortcut",
   "version": "1.0",
   "manifest_version": 3,
   "content_scripts": [
