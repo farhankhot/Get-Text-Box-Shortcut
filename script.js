@@ -11,7 +11,7 @@
 // 6. TB has no name, no id, no class (cant do anything)
 
 // Does not work on:
-// FutBin, 
+
 
 window.onload = function() {
 
@@ -21,19 +21,23 @@ window.onload = function() {
 	
 	for (var j = 0; j < inputTags.length; j++) {
 		if (inputTags[j].getAttribute("type") === "text"
-		|| inputTags[j].getAttribute("type") === "password") {
+		|| inputTags[j].getAttribute("type") === "password" || inputTags[j].getAttribute("type") === "search") {
 
 			var nameAttrOfItem = inputTags.item(j).getAttribute("name");
 			var idAttrOfItem = inputTags.item(j).getAttribute("id");
 
-			if (nameAttrOfItem !== null) {
-				textBoxes.push(nameAttrOfItem);
+			if ( nameAttrOfItem !== null && idAttrOfItem === null) {
+                textBoxes.push(nameAttrOfItem);
+			}
+                
+            if (idAttrOfItem !== null && nameAttrOfItem === null) {
+                textBoxes.push(idAttrOfItem);
+            }
 
-			}
-			else if (idAttrOfItem !== null) {
-				console.log(idAttrOfItem);
-				textBoxes.push(idAttrOfItem);
-			}
+            if (nameAttrOfItem !== null &&
+                idAttrOfItem !== null) {
+                textBoxes.push(idAttrOfItem);
+            }
 			
 		}
 		// chrome.storage.local.set({'list': textBoxes}, function() {

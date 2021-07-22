@@ -40,8 +40,6 @@ function getFirstInQueue() {
 			finalList.push(recreatedHTMLElementfromId);
 			console.log(finalList[j]);
 		}
-
-		// console.log(recreatedHTMLElement);
 		
 	}
 
