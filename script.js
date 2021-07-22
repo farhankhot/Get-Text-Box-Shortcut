@@ -29,7 +29,7 @@ window.onload = function() {
 			if ( nameAttrOfItem !== null && idAttrOfItem === null) {
                 textBoxes.push(nameAttrOfItem);
 			}
-                
+            // ddd        
             if (idAttrOfItem !== null && nameAttrOfItem === null) {
                 textBoxes.push(idAttrOfItem);
             }
