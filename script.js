@@ -20,24 +20,20 @@ window.onload = function() {
 	var inputTags = document.getElementsByTagName("input");
 	
 	for (var j = 0; j < inputTags.length; j++) {
-		if (inputTags[j].getAttribute("type") === "text"
-		|| inputTags[j].getAttribute("type") === "password" || inputTags[j].getAttribute("type") === "search") {
+		if ( (inputTags[j].getAttribute("type") === "text"
+		|| inputTags[j].getAttribute("type") === "password" || inputTags[j].getAttribute("type") === "search") && window.getComputedStyle(inputTags[j]).display !== "none" ) {
 
-			var nameAttrOfItem = inputTags.item(j).getAttribute("name");
-			var idAttrOfItem = inputTags.item(j).getAttribute("id");
+			// var nameAttrOfItem = inputTags.item(j).getAttribute("name");
+			// var idAttrOfItem = inputTags.item(j).getAttribute("id");
+            console.log(inputTags);
 
-			if ( nameAttrOfItem !== null && idAttrOfItem === null) {
-                textBoxes.push(nameAttrOfItem);
+            if (inputTags.item(j).hasAttribute("id") === true) {
+                textBoxes.push(inputTags.item(j).getAttribute("id"));
+            }
+			
+            else if ( inputTags.item(j).hasAttribute("name") === true ) {
+                textBoxes.push(inputTags.item(j).getAttribute("name"));
 			}
-            // ddd        
-            if (idAttrOfItem !== null && nameAttrOfItem === null) {
-                textBoxes.push(idAttrOfItem);
-            }
-
-            if (nameAttrOfItem !== null &&
-                idAttrOfItem !== null) {
-                textBoxes.push(idAttrOfItem);
-            }
 			
 		}
 		// chrome.storage.local.set({'list': textBoxes}, function() {

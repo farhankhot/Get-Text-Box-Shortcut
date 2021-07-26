@@ -25,19 +25,17 @@ function getFirstInQueue() {
 	// We have name attribute in createdList
 	for (var j in createdList) {
 
-	// Template literals: https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation
-		
-		var recreatedHTMLElementfromName = document.querySelector(`[name=${createdList[j]}]`);
-
-		var recreatedHTMLElementfromId = document.querySelector(`[id=${createdList[j]}]`);
-
-		if (recreatedHTMLElementfromName !== null) {
-			finalList.push(recreatedHTMLElementfromName);
+	    // Template literals: https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation
+        var recreatedHTMLElementfromName = document.querySelector(`[name=${createdList[j]}]`);
+		var recreatedHTMLElementfromId = document.querySelector(`#${createdList[j]}`);
+        
+		if (recreatedHTMLElementfromId !== null) {
+			finalList.push(recreatedHTMLElementfromId);
 			console.log(finalList[j]);
 		}
 
-		else if (recreatedHTMLElementfromId !== null) {
-			finalList.push(recreatedHTMLElementfromId);
+		else if (recreatedHTMLElementfromName !== null) {
+			finalList.push(recreatedHTMLElementfromName);
 			console.log(finalList[j]);
 		}
 		
